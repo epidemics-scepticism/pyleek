@@ -49,6 +49,8 @@ class Leek():
         return ' '.join(phrase)
     def decode(self, phrase):
         """Turn a 5 word phrase into an onion address"""
+        if self.loaded == False:
+            raise Exception('Leek class did not initialize.')
         phrase = phrase.split(' ')
         blob = ''
         for word in phrase:
